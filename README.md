@@ -1,3 +1,4 @@
+# Drinks-Info
 
 This console application provides users with information about various drink categories and their respective drinks. It fetches data from "The Cocktail DB" API (http://www.thecocktaildb.com/api/json/v1/1) to display categories, drinks, and drink details.
 
