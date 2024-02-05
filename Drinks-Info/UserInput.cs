@@ -20,5 +20,15 @@ public class UserInput
 			category = Console.ReadLine();
 		}
 
+		GetDrinksInput(category);
+    }
+
+    private void GetDrinksInput(string category)
+    {
+	    drinksService.GetDrinksByCategory(category);
+	    
+	    Console.WriteLine("Choose a drink or go back to main menu by typing 0");
+	    
+	    
     }
 }

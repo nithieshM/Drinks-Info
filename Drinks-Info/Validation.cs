@@ -2,8 +2,19 @@ namespace Drinks_Info;
 
 public class Validation
 {
-    public static bool IsStringValid(string? category)
+    internal static bool IsStringValid(string category)
     {
-        throw new NotImplementedException();
+        if (String.IsNullOrEmpty(category))
+        {
+            return false;
+        }
+
+        foreach (char c in category)
+        {
+            if (!Char.IsLetter(c) && c != '/' && c != ' ')
+                return false;
+        }
+
+        return true;
     }
 }
