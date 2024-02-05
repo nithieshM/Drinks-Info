@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "+eYImBN4jN9nCywgARaheONyayIdhKW0nuxU6pcl+VhpqphzVe08kDaigNdyOTE5oAHrduwp8pP9Esuf2nQrsQ==",
+  "success": true,
+  "projectFilePath": "/home/nithiesh/RiderProjects/Drinks-Info/Drinks-Info/Drinks-Info.csproj",
+  "expectedPackageFiles": [
+    "/home/nithiesh/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.1/microsoft.aspnetcore.app.ref.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
