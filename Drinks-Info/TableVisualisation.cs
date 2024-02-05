@@ -15,7 +15,7 @@ public class TableVisualisation
         }
         Console.WriteLine("\n\n");
         
-        ConsoleTableBuilder.From(tableData).WithColumn(tableName).ExportAndWriteLine();
+        ConsoleTableBuilder.From(tableData).WithColumn(tableName).WithFormat(ConsoleTableBuilderFormat.Alternative).ExportAndWriteLine(TableAligntment.Center);
         Console.WriteLine("\n\n");
     }
 }
