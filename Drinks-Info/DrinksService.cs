@@ -22,7 +22,7 @@ public class DrinksService
             var serialize = JsonConvert.DeserializeObject<Categories>(RawResponse);
 
             categories = serialize.CategoriesList;
-            
+
             TableVisualisation.ShowTable(categories, "Categories Menu");
             return categories;
         }
@@ -44,7 +44,7 @@ public class DrinksService
             var serialize = JsonConvert.DeserializeObject<Drinks>(RawResponse);
 
             drinks = serialize.DrinksList;
-            
+
             TableVisualisation.ShowTable(drinks, "Categories Menu");
             return drinks;
         }
@@ -88,6 +88,7 @@ public class DrinksService
                     });
                 }
             }
+
             TableVisualisation.ShowTable(prepList, drinkDetail.strDrink);
         }
     }

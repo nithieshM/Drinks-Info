@@ -4,8 +4,7 @@ namespace Drinks_Info.Models;
 
 public class Drinks
 {
-    [JsonProperty("drinks")]
-    public List<Drink> DrinksList { get; set; }
+    [JsonProperty("drinks")] public List<Drink> DrinksList { get; set; }
 }
 
 public class Drink

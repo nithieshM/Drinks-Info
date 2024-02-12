@@ -8,55 +8,56 @@ public class UserInput
 
     internal void GetCategoriesInput()
     {
-	    var categories = drinksService.GetCategories();
-		
-		Console.WriteLine("Choose Category:");
+        var categories = drinksService.GetCategories();
 
-		string category = Console.ReadLine();
-		
-		while (!Validation.IsStringValid(category))
-		{
-			Console.WriteLine("\n Invalid Category");
-			category = Console.ReadLine();
-		}
+        Console.WriteLine("Choose Category:");
 
-		if (!categories.Any(x => x.strCategory == category))
-		{
-			Console.WriteLine("Category does not exist");
-			GetCategoriesInput();
-		}
+        string category = Console.ReadLine();
 
-		GetDrinksInput(category);
+        while (!Validation.IsStringValid(category))
+        {
+            Console.WriteLine("\n Invalid Category");
+            category = Console.ReadLine();
+        }
+
+        if (!categories.Any(x => x.strCategory == category))
+        {
+            Console.WriteLine("Category does not exist");
+            GetCategoriesInput();
+        }
+
+        GetDrinksInput(category);
     }
 
     private void GetDrinksInput(string category)
     {
-	    var drinks = drinksService.GetDrinksByCategory(category);
-	    
-	    Console.WriteLine("Choose a drink or go back to main menu by typing 0");
+        var drinks = drinksService.GetDrinksByCategory(category);
 
-	    string drink = Console.ReadLine();
+        Console.WriteLine("Choose a drink or go back to main menu by typing 0");
 
-	    if (drink == "0")
-	    {
-		    GetCategoriesInput();
-	    }
-	    
-	    while (!Validation.IsIdValid(drink))
-	    {
-		    Console.WriteLine("\n Invalid Drink");
-		    drink = Console.ReadLine();
-	    }
+        string drink = Console.ReadLine();
 
-	    if (!drinks.Any(x => x.idDrink == drink))
-	    {
-		    Console.WriteLine("Drink does not exist");
-		    GetCategoriesInput();
-	    }
-	    drinksService.GetDrink(drink);
-	    
-	    Console.WriteLine("Press any key to go back to categories menu");
-	    Console.ReadKey();
-	    if(!Console.KeyAvailable) GetCategoriesInput();
+        if (drink == "0")
+        {
+            GetCategoriesInput();
+        }
+
+        while (!Validation.IsIdValid(drink))
+        {
+            Console.WriteLine("\n Invalid Drink");
+            drink = Console.ReadLine();
+        }
+
+        if (!drinks.Any(x => x.idDrink == drink))
+        {
+            Console.WriteLine("Drink does not exist");
+            GetCategoriesInput();
+        }
+
+        drinksService.GetDrink(drink);
+
+        Console.WriteLine("Press any key to go back to categories menu");
+        Console.ReadKey();
+        if (!Console.KeyAvailable) GetCategoriesInput();
     }
 }
